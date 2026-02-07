@@ -16,6 +16,7 @@ function ChatWidget() {
     });
 
     const data = await response.json();
+    console.log('the received data is: ', data);
     setMessages((prev) => [...prev, data.reply]);
   };
 
