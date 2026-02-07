@@ -3,11 +3,13 @@ import { useState } from 'react';
 function ChatWidget() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
     const userMessage = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
+    setLoading(true);
 
     const response = await fetch('/api/chat', {
       method: 'POST',
@@ -16,6 +18,7 @@ function ChatWidget() {
     });
 
     const data = await response.json();
+    setLoading(false);
     console.log('the received data is: ', data);
     setMessages((prev) => [...prev, data.reply]);
   };
