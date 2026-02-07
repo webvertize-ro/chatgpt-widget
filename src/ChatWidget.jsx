@@ -31,9 +31,9 @@ function ChatWidget() {
         {messages.map((msg, i) => (
           <div key={i} className={msg.role}>
             {msg.content}
-            {loading ? 'Loading...' : ''}
           </div>
         ))}
+        {loading ? 'Loading...' : ''}
       </div>
       <input
         value={input}
