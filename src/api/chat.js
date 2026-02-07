@@ -14,6 +14,7 @@ export default async function handler(req, res) {
     });
 
     const reply = completion.choices[0].message;
+    console.log('the reply from the API is: ', reply);
     res.status(200).json({ reply });
   } catch (error) {
     console.error(error);
