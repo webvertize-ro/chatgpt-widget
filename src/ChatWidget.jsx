@@ -20,6 +20,8 @@ function ChatWidget() {
     setMessages((prev) => [...prev, data.reply]);
   };
 
+  console.log('messages is: ', messages);
+
   return (
     <div className="chat-widget">
       <div className="messages">
