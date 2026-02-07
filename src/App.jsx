@@ -1,5 +1,13 @@
+import ChatWidget from './ChatWidget';
+
 function App() {
-  return <div>ChatGPT Widget</div>;
+  return (
+    <div>
+      {/* <ChatInterface /> */}
+      {/* <ChatInput /> */}
+      <ChatWidget />
+    </div>
+  );
 }
 
 export default App;
