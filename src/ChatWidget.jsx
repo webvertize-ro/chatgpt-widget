@@ -28,11 +28,13 @@ function ChatWidget() {
   return (
     <div className="chat-widget">
       <div className="messages">
-        {messages.map((msg, i) => (
-          <div key={i} className={msg.role}>
-            {msg.content}
-          </div>
-        ))}
+        {loading
+          ? 'Loading...'
+          : messages.map((msg, i) => (
+              <div key={i} className={msg.role}>
+                {msg.content}
+              </div>
+            ))}
       </div>
       <input
         value={input}
